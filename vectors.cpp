@@ -1,6 +1,16 @@
 #include <cstddef>
 #include <iostream>
 #include <vector>
+
+void printIndex0(std::vector<int>& arr) { // pass by reference
+	std::cout << arr[0] << '\n';
+}
+
+std::vector<int> generate() { // generate vector
+	std::vector<int> arr {1,2,3,4,5};
+	return arr; // return by value as uses move semantics - moves data from one object to another by changing addresses instead of copying. Physical location of vector in memory will be constant
+}
+
 int main() {
 	std::vector<int> arr{1,2,3,4,5};
 	std::cout << arr[0] << '\n';
@@ -22,6 +32,13 @@ int main() {
 	
 	std::size_t index {3}; // index should be size_t type not int
 	std::cout << data[index] << '\n';
+
+	printIndex0(data); // pass by reference
+	
+
+	std::vector<int> newArr{generate()}; // return by value using as vector supports move semantics
+	std::cout << newArr[1] << '\n';
+
 	
 
 	return 0;
