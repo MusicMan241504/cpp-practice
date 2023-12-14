@@ -11,20 +11,16 @@ void printArr(const std::vector<std::vector<int>> arr) {
 }
 
 int main() {
-	std::vector<std::vector<int> > arr(3);
+	std::vector<std::vector<int>> arr(3,std::vector<int> (4,0)); // initliase 2d vector 3x4 rowsxcols with values all 0s
 
-	for (size_t i = 0; i < 4; ++i) {
-		for (size_t j = 0; i < 5; ++i) {
-			arr[i][j] = i*j;
+	printArr(arr);
+
+	for (size_t i = 0; i < 3; ++i) {
+		for (size_t j = 0; j < 4; ++j) {
+			arr[i][j] = (i*4)+j;
 		}
 	}
 
-	arr = {
-		{0,1,2,2},
-		{3,4,5,2},
-		{6,7,8,2}
-	};
-	std::cout << arr[0][2];
 
 	printArr(arr);
 
