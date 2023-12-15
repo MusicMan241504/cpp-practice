@@ -41,6 +41,9 @@ int main() {
 	const size_t s{l.size()}; // get length of list
 	std::cout << s << '\n';
 
+	std::cout << l.front() << '\n'; // access first element
+					// use l.back() to access last
+
 
 
 	return 0;
