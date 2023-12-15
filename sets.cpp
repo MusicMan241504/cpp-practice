@@ -2,7 +2,7 @@
 #include <set>
 
 template <typename T>
-void printSet(T s) {
+void printSet(const T& s) {
 	for (const auto& e : s) {
 		std::cout << e << ' ';
 	}
