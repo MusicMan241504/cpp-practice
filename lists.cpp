@@ -3,7 +3,8 @@
 #include <iterator>
 #include <list>
 
-void printList(std::list<int> l) {
+template <typename T>
+void printList(const T& l) {
 	for (const auto& e : l) {
 		std::cout << e << ' ';
 	}
